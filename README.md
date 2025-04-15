@@ -1,0 +1,1 @@
+O reposítório em questão é sobre o projeto final da disciplina de Sistemas Digitais 2024.2 SI , em cada arquivo temos o código feito por cada integrante (individualmente) para cada especificação e no main.v e testebench.v temos o arquivo principal (todos módulos mips) e o seu respectivo testbench.

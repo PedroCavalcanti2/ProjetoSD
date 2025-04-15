@@ -1,0 +1,27 @@
+module MemtoRegMux (
+    input wire [31:0] ALUResult,
+    input wire [31:0] MemData,
+    input wire MemtoReg,
+    output wire [31:0] WriteData
+);
+    assign WriteData = (MemtoReg) ? MemData : ALUResult;
+endmodule
+
+
+module PCSrc_Mux (
+    input wire [31:0] PC_plus_4,
+    input wire [31:0] BranchAddress,
+    input wire PCSrc,
+    output wire [31:0] NextPC
+);
+    assign NextPC = (PCSrc) ? BranchAddress : PC_plus_4;
+endmodule
+
+module RegDst_Mux (
+    input wire [4:0] rt,
+    input wire [4:0] rd,
+    input wire RegDst,
+    output wire [4:0] RegDstOut
+);
+    assign RegDstOut = (RegDst) ? rd : rt;
+endmodule
