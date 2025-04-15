@@ -25,3 +25,12 @@ module RegDst_Mux (
 );
     assign RegDstOut = (RegDst) ? rd : rt;
 endmodule
+
+module alusrc_mux(
+    input [31:0] reg_data,        // Valor lido do registrador (ReadData2)
+    input [31:0] imm_data,        // Immediate estendido (SignExtend)
+    input alusrc,                 // Sinal de controle: 0 = registrador, 1 = immediate
+    output [31:0] alu_operand_b   // Saída para a ALU
+);
+    assign alu_operand_b = (alusrc) ? imm_data : reg_data;
+endmodule
